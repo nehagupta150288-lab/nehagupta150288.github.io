@@ -1,57 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Fade-In Banner Gallery</title>
-<style>
-    body {
-        margin: 0;
-        background: #111;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-
-    /* Gallery wrapper */
-    .banner-gallery {
-        width: 90%;
-        max-width: 900px;
-        position: relative;
-        overflow: hidden;
-        border-radius: 12px;
-    }
-
-    .banner-gallery img {
-        position: absolute;
-        width: 100%;
-        opacity: 0;               /* Hidden by default */
-        transition: opacity 1.5s ease-in-out;
-    }
-
-    .banner-gallery img.active {
-        opacity: 1;               /* Fade-in */
-    }
-</style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="banner-gallery">
+<!-- NAVBAR -->
+<div class="navbar">
+    <img src="images/logo.jpg">
+    <div class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="services.html">SERVICES</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="portfolio.html">MY PORTFOLIO</a>
+        <a href="contact.html">CONTACT US</a>
+    </div>
+</div>
+
+<!-- FULLSCREEN SLIDER -->
+<div class="slider">
+    <span id="leftArrow" class="arrow">&#10094;</span>
+    <span id="rightArrow" class="arrow">&#10095;</span>
+
     <img src="Slider1.jpg" class="active">
     <img src="Slider2.jpg">
     <img src="Slider3.jpg">
+    <img src="Slider4.jpg">
+    <img src="Slider5.jpg">
 </div>
 
-<script>
-    const images = document.querySelectorAll('.banner-gallery img');
-    let index = 0;
+<!-- GALLERY -->
+<div class="gallery">
+    <h2>Our Work</h2>
+    <img src="slider1.jpg" onclick="openFull('images/slider1.jpg')">
+    <img src="Slider2.jpg" onclick="openFull('images/Slider2.jpg')">
+    <img src="Slider3.jpg" onclick="openFull('images/Slider3.jpg')">
+    <img src="Slider4.jpg" onclick="openFull('images/Slider4.jpg')">
+    <img src="Slider5.jpg" onclick="openFull('images/Slider5.jpg')">
+</div>
 
-    setInterval(() => {
-        images[index].classList.remove('active');
-        index = (index + 1) % images.length;
-        images[index].classList.add('active');
-    }, 3500); // Change slide every 3.5 sec
-</script>
+<!-- POPUP IMAGE -->
+<div id="popup" onclick="closePopup()">
+    <img id="popup-img">
+</div>
 
+<script src="script.js"></script>
 </body>
 </html>
