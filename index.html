@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<!-- NAVIGATION OVER BANNER -->
+<!-- NAVIGATION -->
 <div class="navbar">
     <img src="images/logo.jpg">
 
@@ -18,7 +18,14 @@
     </div>
 </div>
 
-<!-- FULLSCREEN SLIDER -->
+<!-- BANNER TEXT -->
+<div class="banner-text">
+    Transforming Spaces With Style & Innovation
+    <br>
+    <a href="contact.html">Contact Us</a>
+</div>
+
+<!-- SLIDER -->
 <div class="slider">
     <span id="leftArrow" class="arrow">&#10094;</span>
     <span id="rightArrow" class="arrow">&#10095;</span>
@@ -28,9 +35,18 @@
     <img src="Slider3.jpg">
     <img src="Slider4.jpg">
     <img src="Slider5.jpg">
+
+    <!-- DOT INDICATORS -->
+    <div class="indicators">
+        <span onclick="goToSlide(0)" class="active-dot"></span>
+        <span onclick="goToSlide(1)"></span>
+        <span onclick="goToSlide(2)"></span>
+        <span onclick="goToSlide(3)"></span>
+        <span onclick="goToSlide(4)"></span>
+    </div>
 </div>
 
-<!-- BOTTOM FIXED EQUAL SIZE GALLERY -->
+<!-- GALLERY -->
 <div class="gallery">
     <img src="Slider1.jpg" onclick="openFull('Slider1.jpg')">
     <img src="Slider2.jpg" onclick="openFull('Slider2.jpg')">
@@ -39,7 +55,7 @@
     <img src="Slider5.jpg" onclick="openFull('Slider5.jpg')">
 </div>
 
-<!-- FULL IMAGE POPUP -->
+<!-- FULL VIEW POPUP -->
 <div id="popup" onclick="closePopup()">
     <img id="popup-img">
 </div>
