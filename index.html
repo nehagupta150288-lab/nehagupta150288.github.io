@@ -5,7 +5,10 @@
 </head>
 <body>
 
-<!-- NAVIGATION -->
+<!-- WHATSAPP FLOATING BUTTON -->
+<img id="whatsapp" src="images/whatsapp.png">
+
+<!-- NAVBAR -->
 <div class="navbar">
     <img src="images/logo.jpg">
 
@@ -18,15 +21,8 @@
     </div>
 </div>
 
-<!-- BANNER TEXT -->
-<div class="banner-text">
-    Transforming Spaces With Style & Innovation
-    <br>
-    <a href="contact.html">Contact Us</a>
-</div>
-
 <!-- SLIDER -->
-<div class="slider">
+<div class="slider-container">
     <span id="leftArrow" class="arrow">&#10094;</span>
     <span id="rightArrow" class="arrow">&#10095;</span>
 
@@ -36,7 +32,6 @@
     <img src="Slider4.jpg">
     <img src="Slider5.jpg">
 
-    <!-- DOT INDICATORS -->
     <div class="indicators">
         <span onclick="goToSlide(0)" class="active-dot"></span>
         <span onclick="goToSlide(1)"></span>
@@ -48,16 +43,58 @@
 
 <!-- GALLERY -->
 <div class="gallery">
-    <img src="Slider1.jpg" onclick="openFull('Slider1.jpg')">
-    <img src="Slider2.jpg" onclick="openFull('Slider2.jpg')">
-    <img src="Slider3.jpg" onclick="openFull('Slider3.jpg')">
-    <img src="Slider4.jpg" onclick="openFull('Slider4.jpg')">
-    <img src="Slider5.jpg" onclick="openFull('Slider5.jpg')">
+    <img src="Slider1.jpg" onclick="openImage('Slider1.jpg')">
+    <img src="Slider2.jpg" onclick="openImage('Slider2.jpg')">
+    <img src="Slider3.jpg" onclick="openImage('Slider3.jpg')">
+    <img src="Slider4.jpg" onclick="openImage('Slider4.jpg')">
+    <img src="Slider5.jpg" onclick="openImage('Slider5.jpg')">
 </div>
 
-<!-- FULL VIEW POPUP -->
-<div id="popup" onclick="closePopup()">
-    <img id="popup-img">
+<!-- FULLSCREEN VIEW -->
+<div id="fullview">
+    <span class="close-btn" onclick="closeFull()">✖</span>
+    <img id="full-img">
+    <div class="info">This is your image description text in white color.</div>
+</div>
+
+<!-- BELOW BANNER SECTION -->
+<div class="layout-section">
+    <img src="images/Slider1.jpg">
+    <div class="text">
+        <h2>Your Interior Architecture Vision</h2>
+        <p>
+            Your company description text appears here. This content is placed
+            beside an image for a clean modern layout.
+        </p>
+    </div>
+</div>
+
+<!-- ACHIEVEMENT SECTION -->
+<div class="achievement-container">
+    <h2>Our Achievements</h2>
+
+    <div class="achievement-arrows">
+        <span onclick="document.querySelector('.achievement-slider').scrollBy({left:-300,behavior:'smooth'})">
+            &#10094;
+        </span>
+        <span onclick="document.querySelector('.achievement-slider').scrollBy({left:300,behavior:'smooth'})">
+            &#10095;
+        </span>
+    </div>
+
+    <div class="achievement-slider">
+        <img src="Slider1.jpg">
+        <img src="Slider2.jpg">
+        <img src="Slider3.jpg">
+        <img src="Slider4.jpg">
+        <img src="Slider5.jpg">
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <img src="facebook.png">
+    <img src="instagram.png">
 </div>
 
 <script src="script.js"></script>
