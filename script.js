@@ -1,44 +1,68 @@
-window.onload = function () {
+/* ================= MAIN BANNER SLIDER ================= */
+let index = 0;
+const slides = document.querySelectorAll(".slider-container img");
+const dots = document.querySelectorAll(".indicators span");
 
-    let index = 0;
-    const slides = document.querySelectorAll(".slider-container img");
-    const dots = document.querySelectorAll(".indicators span");
+function showSlide(i) {
+    slides.forEach(s => s.classList.remove("active"));
+    dots.forEach(d => d.classList.remove("active-dot"));
 
-    function updateSlider() {
-        slides.forEach(s => s.classList.remove("active"));
-        dots.forEach(d => d.classList.remove("active-dot"));
+    slides[i].classList.add("active");
+    dots[i].classList.add("active-dot");
+}
 
-        slides[index].classList.add("active");
-        dots[index].classList.add("active-dot");
-    }
+document.getElementById("rightArrow").onclick = () => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+};
 
-    document.getElementById("rightArrow").onclick = () => {
-        index = (index + 1) % slides.length;
-        updateSlider();
-    };
+document.getElementById("leftArrow").onclick = () => {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+};
 
-    document.getElementById("leftArrow").onclick = () => {
-        index = (index - 1 + slides.length) % slides.length;
-        updateSlider();
-    };
-
-    window.goToSlide = function(i){
+dots.forEach((dot, i) => {
+    dot.onclick = () => {
         index = i;
-        updateSlider();
-    }
+        showSlide(index);
+    };
+});
 
-    /* FULL SIZE IMAGE PREVIEW */
-    window.openImage = function(src){
-        document.getElementById("full-img").src = src;
-        document.getElementById("fullview").style.display = "flex";
-    }
+/* ================= ACHIEVEMENTS SLIDER ================= */
+let achIndex = 0;
+const achImages = document.querySelectorAll(".ach-slider img");
 
-    window.closeFull = function(){
-        document.getElementById("fullview").style.display = "none";
-    }
+function showAch(i) {
+    achImages.forEach(a => a.classList.remove("active"));
+    achImages[i].classList.add("active");
+}
 
-    /* WHATSAPP */
-    document.getElementById("whatsapp").onclick = function() {
-        window.open("https://wa.me/91123456789", "_blank");
-    }
+document.getElementById("achRight").onclick = () => {
+    achIndex = (achIndex + 1) % achImages.length;
+    showAch(achIndex);
+};
+document.getElementById("achLeft").onclick = () => {
+    achIndex = (achIndex - 1 + achImages.length) % achImages.length;
+    showAch(achIndex);
+};
+
+/* ================= PORTFOLIO POPUP ================= */
+function openFull(img) {
+    document.getElementById("popup-img").src = img;
+    document.getElementById("popup").style.display = "flex";
+}
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+
+/* ================= CONTACT & WHATSAPP WIDGET ================= */
+document.getElementById("contactBtn").onclick = () => {
+    document.getElementById("contactPopup").style.display = "block";
+};
+document.getElementById("closeContact").onclick = () => {
+    document.getElementById("contactPopup").style.display = "none";
+};
+
+document.getElementById("whatsappBtn").onclick = () => {
+    window.open("https://wa.me/911234567890", "_blank");
 };
