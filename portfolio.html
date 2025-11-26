@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+</head>
+
+<body>
+<div class="navbar">
+    <img src="images/logo.jpg" class="logo">
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="#" style="background:black;color:white;">My Portfolio</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+</div>
+
+<div style="padding-top:120px;">
+    <h1 style="text-align:center;">Our Portfolio</h1>
+
+    <div class="gallery-container">
+        <img src="images/Slider1.jpg" onclick="openFull('images/Slider1.jpg')">
+        <img src="images/Slider2.jpg" onclick="openFull('images/Slider2.jpg')">
+        <img src="images/Slider3.jpg" onclick="openFull('images/Slider3.jpg')">
+        <img src="images/Slider4.jpg" onclick="openFull('images/Slider4.jpg')">
+        <img src="images/Slider5.jpg" onclick="openFull('images/Slider5.jpg')">
+    </div>
+</div>
+
+<div id="popup">
+    <span id="closePopup" onclick="closePopup()">&times;</span>
+    <img id="popup-img">
+</div>
+
+</body>
+</html>
