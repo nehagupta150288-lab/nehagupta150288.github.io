@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: Lato;
 }
 
 /* NAVIGATION */
@@ -29,7 +29,7 @@ body {
     text-decoration: none;
     color: white;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: normal;
     transition: 0.3s;
 }
 
@@ -65,7 +65,7 @@ body {
     color: white;
     z-index: 30;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: normal;
     user-select: none;
 }
 
