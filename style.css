@@ -1,130 +1,230 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
 
-body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: "Lato", sans-serif;
-    background: #f7f7f7;
 }
 
-/* NAVIGATION */
+body {
+    background: #fff;
+    color: #333;
+}
+
+/* ================= NAVIGATION ================= */
 .navbar {
-    position: fixed;
-    top: 0;
     width: 100%;
     height: 85px;
     background: white;
     display: flex;
     align-items: center;
-    padding: 0 30px;
-    z-index: 1000;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    border-bottom: 1px solid #ddd;
 }
 
-.navbar img {
+.logo {
     height: 60px;
 }
 
 .nav-links {
-    flex: 1;
-    text-align: center;
+    margin-left: auto;
 }
 
 .nav-links a {
-    margin: 0 25px;
+    margin-left: 25px;
+    font-size: 18px;
     text-decoration: none;
     color: black;
-    font-size: 20px;
     transition: 0.3s;
+    padding: 6px 12px;
+    border-radius: 4px;
 }
 
-.nav-links a:hover,
-.nav-links a:active {
-    color: white;
+.nav-links a:hover {
     background: black;
-    padding: 8px 14px;
-    border-radius: 5px;
+    color: white;
 }
 
-/* BANNER / SLIDER */
+/* ================= BANNER SLIDER ================= */
 .slider-container {
     margin-top: 85px;
+    height: 50vh;
+    width: 100%;
     position: relative;
-    height: 55vh;
     overflow: hidden;
-    background: black;
 }
 
 .slider-container img {
-    position: absolute;
     width: 100%;
-    height: 55vh;
+    height: 100%;
+    position: absolute;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 1.6s ease;
+    transition: opacity 1.5s ease;
 }
 
 .slider-container img.active {
     opacity: 0.8;
 }
 
-/* ARROWS */
+.banner-text {
+    position: absolute;
+    top: 40%;
+    left: 50px;
+    color: white;
+    font-size: 32px;
+    z-index: 100;
+}
+
+.banner-text a {
+    margin-top: 15px;
+    display: inline-block;
+    background: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.banner-text a:hover {
+    background: black;
+    color: white;
+}
+
+/* Arrows */
 .arrow {
     position: absolute;
     top: 50%;
-    font-size: 55px;
-    z-index: 100;
+    font-size: 50px;
     color: white;
     cursor: pointer;
+    z-index: 100;
     user-select: none;
 }
-#leftArrow { left: 25px; }
-#rightArrow { right: 25px; }
+#leftArrow { left: 20px; }
+#rightArrow { right: 20px; }
 
-/* INDICATORS */
+/* Dots */
 .indicators {
     position: absolute;
-    bottom: 15px;
+    bottom: 20px;
     width: 100%;
     text-align: center;
+    z-index: 100;
 }
 .indicators span {
     display: inline-block;
     width: 12px;
     height: 12px;
-    background: rgba(255,255,255,0.5);
-    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
     margin: 4px;
+    border-radius: 50%;
     cursor: pointer;
 }
 .indicators .active-dot {
     background: white;
 }
 
-/* GALLERY */
-.gallery {
+/* ================= IMAGE + TEXT SECTION ================= */
+.split-section {
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: -50px;
-    z-index: 2000;
+    padding: 50px;
+}
+.split-section img {
+    width: 50%;
+    border-radius: 10px;
+}
+.split-section .text {
+    width: 50%;
+    padding: 40px;
+    font-size: 20px;
+}
+
+/* ================= ACHIEVEMENTS SLIDER ================= */
+.achievements {
+    margin-top: 30px;
+    padding: 40px;
+    text-align: center;
+}
+.achievements h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.ach-slider {
     position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    height: 300px;
 }
 
-.gallery img {
-    width: 180px;
-    height: 120px;
+.ach-slider img {
+    width: 100%;
+    height: 300px;
     object-fit: cover;
-    cursor: pointer;
-    border-radius: 8px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+.ach-slider img.active {
+    opacity: 1;
 }
 
-/* FULLSCREEN PREVIEW */
-#fullview {
+.ach-arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 50px;
+    cursor: pointer;
+    color: #000;
+    z-index: 50;
+}
+#achLeft { left: 10px; }
+#achRight { right: 10px; }
+
+/* ================= PORTFOLIO GALLERY ================= */
+.gallery-container {
+    padding: 100px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.gallery-container img {
+    width: 300px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Popup full image */
+#popup {
     display: none;
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(0,0,0,0.92);
+    background: rgba(0,0,0,0.9);
     justify-content: center;
-    align-i
+    align-items: center;
+    z-index: 5000;
+}
+#popup img {
+    max-width: 90%;
+    max-height: 90%;
+}
+#closePopup {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 45px;
+    color: white;
+    cursor: pointer;
+}
+
+/* ================= FLOATING CONTACT*
