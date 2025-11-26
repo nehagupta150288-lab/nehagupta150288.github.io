@@ -1,43 +1,44 @@
 window.onload = function () {
 
     let index = 0;
-    const slides = document.querySelectorAll(".slider img");
+    const slides = document.querySelectorAll(".slider-container img");
     const dots = document.querySelectorAll(".indicators span");
 
-    function showSlide() {
-        slides.forEach((s, i) => {
-            s.classList.remove("active");
-            dots[i].classList.remove("active-dot");
-        });
+    function updateSlider() {
+        slides.forEach(s => s.classList.remove("active"));
+        dots.forEach(d => d.classList.remove("active-dot"));
 
         slides[index].classList.add("active");
         dots[index].classList.add("active-dot");
     }
 
-    // Arrows
     document.getElementById("rightArrow").onclick = () => {
         index = (index + 1) % slides.length;
-        showSlide();
+        updateSlider();
     };
 
     document.getElementById("leftArrow").onclick = () => {
         index = (index - 1 + slides.length) % slides.length;
-        showSlide();
+        updateSlider();
     };
 
-    // Dot clicking
     window.goToSlide = function(i){
         index = i;
-        showSlide();
+        updateSlider();
     }
 
-    // Gallery popup
-    window.openFull = function(img) {
-        document.getElementById("popup-img").src = img;
-        document.getElementById("popup").style.display = "flex";
+    /* FULL SIZE IMAGE PREVIEW */
+    window.openImage = function(src){
+        document.getElementById("full-img").src = src;
+        document.getElementById("fullview").style.display = "flex";
     }
 
-    window.closePopup = function() {
-        document.getElementById("popup").style.display = "none";
+    window.closeFull = function(){
+        document.getElementById("fullview").style.display = "none";
+    }
+
+    /* WHATSAPP */
+    document.getElementById("whatsapp").onclick = function() {
+        window.open("https://wa.me/91123456789", "_blank");
     }
 };
