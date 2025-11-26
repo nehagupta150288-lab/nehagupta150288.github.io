@@ -2,29 +2,30 @@
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
+
 <body>
 
-<!-- WHATSAPP FLOATING BUTTON -->
-<img id="whatsapp" src="images/whatsapp.png">
-
-<!-- NAVBAR -->
 <div class="navbar">
-    <img src="images/logo.jpg">
+    <img src="images/logo.jpg" class="logo">
 
     <div class="nav-links">
-        <a href="index.html">HOME</a>
-        <a href="services.html">SERVICES</a>
-        <a href="about.html">ABOUT US</a>
-        <a href="portfolio.html">MY PORTFOLIO</a>
-        <a href="contact.html">CONTACT US</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">My Portfolio</a>
+        <a href="contact.html">Contact Us</a>
     </div>
 </div>
 
-<!-- SLIDER -->
+<!-- Banner Slider -->
 <div class="slider-container">
-    <span id="leftArrow" class="arrow">&#10094;</span>
-    <span id="rightArrow" class="arrow">&#10095;</span>
+
+    <div class="banner-text">
+        Transforming Spaces with Innovation<br>
+        <a href="contact.html">Contact Us</a>
+    </div>
 
     <img src="Slider1.jpg" class="active">
     <img src="Slider2.jpg">
@@ -32,71 +33,65 @@
     <img src="Slider4.jpg">
     <img src="Slider5.jpg">
 
+    <span id="leftArrow" class="arrow">&#10094;</span>
+    <span id="rightArrow" class="arrow">&#10095;</span>
+
     <div class="indicators">
-        <span onclick="goToSlide(0)" class="active-dot"></span>
-        <span onclick="goToSlide(1)"></span>
-        <span onclick="goToSlide(2)"></span>
-        <span onclick="goToSlide(3)"></span>
-        <span onclick="goToSlide(4)"></span>
+        <span class="active-dot"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 </div>
 
-<!-- GALLERY -->
-<div class="gallery">
-    <img src="Slider1.jpg" onclick="openImage('Slider1.jpg')">
-    <img src="Slider2.jpg" onclick="openImage('Slider2.jpg')">
-    <img src="Slider3.jpg" onclick="openImage('Slider3.jpg')">
-    <img src="Slider4.jpg" onclick="openImage('Slider4.jpg')">
-    <img src="Slider5.jpg" onclick="openImage('Slider5.jpg')">
-</div>
-
-<!-- FULLSCREEN VIEW -->
-<div id="fullview">
-    <span class="close-btn" onclick="closeFull()">✖</span>
-    <img id="full-img">
-    <div class="info">This is your image description text in white color.</div>
-</div>
-
-<!-- BELOW BANNER SECTION -->
-<div class="layout-section">
+<!-- Split Section -->
+<div class="split-section">
     <img src="images/Slider1.jpg">
     <div class="text">
-        <h2>Your Interior Architecture Vision</h2>
+        <h2>We Create Meaningful Living Spaces</h2>
         <p>
-            Your company description text appears here. This content is placed
-            beside an image for a clean modern layout.
+            Our architectural philosophy blends aesthetics with functionality.  
+            Every project is crafted with precision, beauty, and innovation.
         </p>
     </div>
 </div>
 
-<!-- ACHIEVEMENT SECTION -->
-<div class="achievement-container">
+<!-- Achievements -->
+<div class="achievements">
     <h2>Our Achievements</h2>
 
-    <div class="achievement-arrows">
-        <span onclick="document.querySelector('.achievement-slider').scrollBy({left:-300,behavior:'smooth'})">
-            &#10094;
-        </span>
-        <span onclick="document.querySelector('.achievement-slider').scrollBy({left:300,behavior:'smooth'})">
-            &#10095;
-        </span>
-    </div>
+    <div class="ach-slider">
+        <img src="images/achievement1.jpg" class="active">
+        <img src="images/achievement2.jpg">
+        <img src="images/achievement3.jpg">
+        <img src="images/achievement4.jpg">
 
-    <div class="achievement-slider">
-        <img src="Slider1.jpg">
-        <img src="Slider2.jpg">
-        <img src="Slider3.jpg">
-        <img src="Slider4.jpg">
-        <img src="Slider5.jpg">
+        <span id="achLeft" class="ach-arrow">&#10094;</span>
+        <span id="achRight" class="ach-arrow">&#10095;</span>
     </div>
 </div>
 
-<!-- FOOTER -->
-<div class="footer">
-    <img src="facebook.png">
-    <img src="instagram.png">
+<!-- Floating Contact + WhatsApp -->
+<div class="floating-box">
+    <button id="contactBtn">Contact Us</button>
+    <button id="whatsappBtn">WhatsApp</button>
 </div>
 
-<script src="script.js"></script>
+<div id="contactPopup">
+    <span id="closeContact">&times;</span>
+    <h3>Quick Contact</h3>
+    <input placeholder="Name">
+    <input placeholder="Phone">
+    <input placeholder="Email">
+    <textarea placeholder="Message"></textarea>
+    <button>Submit</button>
+</div>
+
+<footer>
+    <img src="images/facebook.png">
+    <img src="images/instagram.png">
+</footer>
+
 </body>
 </html>
